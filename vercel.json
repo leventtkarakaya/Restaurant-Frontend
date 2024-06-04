@@ -3,25 +3,21 @@
     {
       "src": "/api/v1/all(.*)",
       "dest": "/api/image",
-      "cors": true,
       "methods": ["GET, POST, PUT, PATCH, DELETE, OPTIONS"]
     },
     {
       "src": "/api/v1/user(.*)",
       "dest": "/api/user",
-      "cors": true,
       "methods": ["GET, POST, PUT, PATCH, DELETE, OPTIONS"]
     },
     {
       "src": "/api/v1/food(.*)",
       "dest": "/api/food",
-      "cors": true,
       "methods": ["GET, POST, PUT, PATCH, DELETE, OPTIONS"]
     },
     {
       "src": "/api/v1/order(.*)",
       "dest": "/api/order",
-      "cors": true,
       "methods": ["GET, POST, PUT, PATCH, DELETE, OPTIONS"]
     }
   ]
