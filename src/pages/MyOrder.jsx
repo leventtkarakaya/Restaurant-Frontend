@@ -14,7 +14,7 @@ export default function MyOrder() {
   const getMyOrder = async () => {
     try {
       const res = await axios.post(
-        "https://restaurant-backend-opal.vercel.app/api/v1/order/getorder",
+        "https://restaurant-backend-seven.vercel.app/api/v1/order/getorder",
         {
           userId: user?._id,
           token: localStorage.getItem("token"),

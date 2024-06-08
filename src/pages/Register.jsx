@@ -32,7 +32,7 @@ export default function page() {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/all/upload-image",
+        "https://restaurant-backend-seven.vercel.app/api/v1/all/upload-image",
         reader
       );
       setUploading(false);
@@ -48,13 +48,16 @@ export default function page() {
     e.preventDefault();
     try {
       await axios
-        .post("http://localhost:5000/api/v1/user/register", {
-          name: registerFormData.name,
-          email: registerFormData.email,
-          password: registerFormData.password,
-          passwordConfrim: registerFormData.passwordConfrim,
-          profileImage: image?.url,
-        })
+        .post(
+          "https://restaurant-backend-seven.vercel.app/api/v1/user/register",
+          {
+            name: registerFormData.name,
+            email: registerFormData.email,
+            password: registerFormData.password,
+            passwordConfrim: registerFormData.passwordConfrim,
+            profileImage: image?.url,
+          }
+        )
         .then((response) => {
           console.log("🚀 ~ .then ~ response:", response);
           const { name, _id, isVerified } = response.data.data.user;

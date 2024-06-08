@@ -33,7 +33,7 @@ export default function Profile() {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "https://restaurant-backend-opal.vercel.app/api/v1/all/upload-image",
+        "https://restaurant-backend-seven.vercel.app/api/v1/all/upload-image",
         formData
       );
       setUploading(false);
@@ -51,7 +51,7 @@ export default function Profile() {
   const handleOnSubmit = async () => {
     try {
       const response = await axios.put(
-        "https://restaurant-backend-opal.vercel.app/api/v1/user/profileUpdate",
+        "https://restaurant-backend-seven.vercel.app/api/v1/user/profileUpdate",
         {
           userId: user._id,
           name: profile?.name,

@@ -14,7 +14,7 @@ export default function RecommendationFood() {
     setUploading(true);
     try {
       const res = await axios.get(
-        "https://restaurant-backend-opal.vercel.app/api/v1/food/admin/getTopRating"
+        "https://restaurant-backend-seven.vercel.app/api/v1/food/admin/getTopRating"
       );
       setUploading(false);
       if (res.data.success && uploading === false) {

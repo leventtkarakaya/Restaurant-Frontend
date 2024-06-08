@@ -27,7 +27,7 @@ export default function VerifyOtp() {
     console.log(dataOtp.email, dataOtp.combinedOtp);
     await axios
       .post(
-        "https://restaurant-backend-opal.vercel.app/api/v1/user/verifyotp",
+        "https://restaurant-backend-seven.vercel.app/api/v1/user/verifyotp",
         {
           email: dataOtp.email,
           combinedOtp: dataOtp.combinedOtp,
