@@ -101,7 +101,6 @@ export default function Navbar() {
                     <span className="text-sm text-center">
                       Sepetinizdeki ürünler
                     </span>
-
                     <div className="flex items-center justify-center card-actions">
                       <NavLink to="/viewcart">
                         <button className="btn btn-primary btn-block focus:bg-[#005b96] hover:bg-[#005b96] rounded-full">
@@ -112,7 +111,6 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-
               {/* User Profile Controller */}
               {user && user ? (
                 <div className="dropdown dropdown-end">
@@ -170,7 +168,7 @@ export default function Navbar() {
                 </Link>
               )}
             </div>
-            {/* Mobile Menu */}
+            {/* Mobile Menu Controller */}
             <div
               className="z-40 block lg:hidden"
               onClick={() => setNavigation(!navigation)}
@@ -187,33 +185,89 @@ export default function Navbar() {
               } pt-24`}
             >
               <div className="flex flex-col items-center gap-8">
-                <a
-                  href="/"
-                  className="text-[#191919] text-xl font-medium hover:text-[#b3cde0]"
+                <Link
+                  to="/"
+                  className="text-[#6B7280] text-base font-medium hover:text-[#005b96]"
                 >
                   Günün Özelleri
-                </a>
-                <a
-                  href="/"
-                  className="text-[#191919] text-xl font-medium hover:text-[#b3cde0]"
+                </Link>
+                <Link
+                  to="/menu"
+                  className="text-[#6B7280] text-base font-medium hover:text-[#005b96]"
                 >
                   Menümüz
-                </a>
-                <a
-                  href="/"
-                  className="text-[#191919] text-xl font-medium hover:text-[#b3cde0]"
-                >
-                  Yemek Ekle
-                </a>
-                <a
-                  href="/"
-                  className="text-[#191919] text-xl font-medium hover:text-[#b3cde0]"
+                </Link>
+                {user && user?.role === "admin" && (
+                  <Link
+                    to="/addfood"
+                    className="text-[#6B7280] text-base font-medium hover:text-[#005b96]"
+                  >
+                    Yemek Ekle
+                  </Link>
+                )}
+                <Link
+                  to="/"
+                  className="text-[#6B7280] text-base font-medium hover:text-[#005b96]"
                 >
                   En Popülerler
-                </a>
-                <button className="bg-[#274c5e] font-medium py-2 px-8 rounded-full active:scale-90 transition duration-100 transform hover:shadow-xl shadow-md ">
-                  Giriş
-                </button>
+                </Link>
+                {user && user ? (
+                  <div className="dropdown dropdown-end">
+                    <div
+                      tabIndex={0}
+                      role="button"
+                      className="btn btn-ghost btn-circle avatar"
+                    >
+                      <div className="w-10 rounded-full">
+                        <img
+                          alt="Tailwind CSS Navbar component"
+                          src={user?.profileImage || Avatar}
+                        />
+                      </div>
+                    </div>
+                    <ul
+                      tabIndex={0}
+                      className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-white rounded-box w-52"
+                    >
+                      <li>
+                        <Link to={"/profile"}>
+                          <button className="justify-between">Profile</button>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to={"/all-orders"}>
+                          <button className="justify-between">
+                            Bütün Şiparişler
+                          </button>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to={"/my-orders"}>
+                          <button className="justify-between">
+                            Siparişler
+                          </button>
+                        </Link>
+                      </li>
+                      <li>
+                        <button
+                          onClick={() => {
+                            localStorage.removeItem("token");
+                            location.reload();
+                            navigatinos("/login");
+                          }}
+                        >
+                          Çıkış
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                ) : (
+                  <Link to={"/login"}>
+                    <button className="bg-[#274c5e] text-white font-medium py-2 px-8 rounded-full active:scale-90 transition duration-100 transform hover:shadow-xl shadow-md ">
+                      Giriş
+                    </button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
