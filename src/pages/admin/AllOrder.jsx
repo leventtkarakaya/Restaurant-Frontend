@@ -8,7 +8,7 @@ export default function AllOrder() {
   const getAllOrders = async () => {
     try {
       const res = await axios.post(
-        "restaurant-frontend-lilac-one.vercel.app/api/v1/order/getorders",
+        "https://restaurant-backend-seven.vercel.app/api/v1/order/getorders",
         {
           userId: user?._id,
           token: localStorage.getItem("token"),
