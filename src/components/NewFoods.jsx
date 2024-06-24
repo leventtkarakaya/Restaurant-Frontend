@@ -52,7 +52,7 @@ export default function NewFood() {
                             src={item?.foodImage}
                             alt="food"
                             className="rounded-2xl"
-                            style={{ width: "300px", height: "300px" }}
+                            style={{ width: "200px", height: "200px" }}
                           />
                         </Link>
                         <div className="absolute top-0 left-2">
