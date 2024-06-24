@@ -12,7 +12,7 @@ export default function NewFood() {
     setUploading(true);
     try {
       const response = await axios.get(
-        "http://restaurant-backend-seven.vercel.app/v1/food/admin/getNewFoods"
+        "https://restaurant-backend-seven.vercel.app/v1/food/admin/getNewFoods"
       );
       setUploading(false);
       if (response.data.success && uploading === false) {
