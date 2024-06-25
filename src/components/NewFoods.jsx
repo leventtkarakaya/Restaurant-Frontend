@@ -16,7 +16,7 @@ export default function NewFood() {
       );
       setUploading(false);
       if (response.data.success && uploading === false) {
-        toast.success(response.data.message);
+        
         setNewFood(response.data.data.food);
       } else {
         toast.error(response.data.message);
