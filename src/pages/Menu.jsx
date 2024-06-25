@@ -70,7 +70,7 @@ export default function Menu() {
       setUploading(false);
       if (res.data.success && uploading === false) {
         setFood(res.data.data.food);
-        toast.success(res.data.message);
+
       } else {
         toast.error(res.data.message);
       }
