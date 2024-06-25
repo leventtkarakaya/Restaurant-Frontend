@@ -26,7 +26,7 @@ export default function page() {
     try {
       await axios
         .post(
-          "https://restaurant-backend-seven.vercel.app/api/v1/user/login",
+          "https://restaurant-backend-drab.vercel.app/api/v1/user/login",
           {
             email: loginFormData.email,
             password: loginFormData.password,
