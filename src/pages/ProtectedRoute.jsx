@@ -8,7 +8,7 @@ export default function ProtectedRoute({ children }) {
   const getUser = async () => {
     try {
       const res = await axios.post(
-        "https://restaurant-backend-seven.vercel.app/api/v1/user/get-user",
+        "https://restaurant-backend-drab.vercel.app/api/v1/user/get-user",
         {
           token: localStorage.getItem("token"),
         },
