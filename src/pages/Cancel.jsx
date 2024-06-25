@@ -15,7 +15,7 @@ export default function Cancel() {
                 Ödeme işlemin bir sorunla karsilasildi
               </h3>
               <p className="my-2 text-gray-600">
-                Thank you for completing your secure online payment.
+                Ödeme islemi sırasında bir sorunla karsılastık.
               </p>
               <p> Have a great day! </p>
               <div className="py-10 text-center">
@@ -23,7 +23,7 @@ export default function Cancel() {
                   to="/"
                   className="px-12 py-3 font-semibold text-white bg-indigo-600 hover:bg-indigo-500"
                 >
-                  GO BACK
+                  Geri Dön
                 </Link>
               </div>
             </div>
