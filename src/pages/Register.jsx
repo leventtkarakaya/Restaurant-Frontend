@@ -32,7 +32,7 @@ export default function page() {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "https://restaurant-backend-seven.vercel.app/api/v1/all/upload-image",
+        "https://restaurant-backend-drab.vercel.app/api/v1/all/upload-image",
         reader
       );
       setUploading(false);
@@ -49,7 +49,7 @@ export default function page() {
     try {
       await axios
         .post(
-          "https://restaurant-backend-seven.vercel.app/api/v1/user/register",
+          "https://restaurant-backend-drab.vercel.app/api/v1/user/register",
           {
             name: registerFormData.name,
             email: registerFormData.email,
