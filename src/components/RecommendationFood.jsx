@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import AdanaDürüm from "../../public/Yemekler/Adana.webp";
 import { FaHeart } from "react-icons/fa";
 import { UseFoodContext } from "../../context/foodContext";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { UseCardContext } from "../../context/cardContext";
