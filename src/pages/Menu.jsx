@@ -65,7 +65,7 @@ export default function Menu() {
     setUploading(true);
     try {
       const res = await axios.get(
-        `https://restaurant-backend-seven.vercel.app/api/v1/food/admin/getAllFoods?category=${value.value}`
+        `https://restaurant-backend-drab.vercel.app/api/v1/food/admin/getAllFoods?category=${value.value}`
       );
       setUploading(false);
       if (res.data.success && uploading === false) {
