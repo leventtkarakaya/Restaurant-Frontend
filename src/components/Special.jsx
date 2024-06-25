@@ -4,6 +4,7 @@ import { UseFoodContext } from "../../context/foodContext";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { UseCardContext } from "../../context/cardContext";
 export default function Special() {
   const [special, setSpecial] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -27,7 +28,7 @@ export default function Special() {
   useEffect(() => {
     getSpeacialServices();
   }, [setSpecial]);
-
+  const { addToCart } = UseCardContext();
   console.log(special);
   return (
     <>
@@ -89,7 +90,9 @@ export default function Special() {
                         </span>
                       </div>
                     </div>
-                    <button className="bg-[#005b96] hover:bg-[#03396c] active:scale-90 transition-all duration-200 shadow-md hover:shadow-xl text-white font-medium py-2 px-8 rounded-full mt-3">
+                    <button 
+                      onClick={() => addToCart(item)}
+                      className="bg-[#005b96] hover:bg-[#03396c] active:scale-90 transition-all duration-200 shadow-md hover:shadow-xl text-white font-medium py-2 px-8 rounded-full mt-3">
                       Siparişe Ver
                     </button>
                   </div>
