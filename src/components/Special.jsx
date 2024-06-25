@@ -16,7 +16,6 @@ export default function Special() {
       );
       setUploading(false);
       if (res.data.success && uploading === false) {
-        toast.success(res.data.message);
         setSpecial(res.data.data.food);
       } else {
         toast.error(res.data.message);
