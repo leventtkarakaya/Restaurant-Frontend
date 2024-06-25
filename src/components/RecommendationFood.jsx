@@ -49,6 +49,7 @@ export default function RecommendationFood() {
                       key={item._id}
                     >
                       <div className="relative mb-3">
+                        <Link to={`/food-details/${foodItem?._id}`}>
                         <img
                           src={item?.foodImage}
                           alt="food"
@@ -60,6 +61,7 @@ export default function RecommendationFood() {
                             height: "200px",
                           }}
                         />
+                           </Link>
                         <div className="absolute top-0 left-2">
                           <button
                             key={item._id}
