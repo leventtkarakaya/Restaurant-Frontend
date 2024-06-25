@@ -31,7 +31,7 @@ export default function AddFood() {
     setUploading(true);
     try {
       const { data } = await axios.post(
-        "https://restaurant-backend-seven.vercel.app/api/v1/all/upload-image",
+        "https://restaurant-backend-drab.vercel.app/api/v1/all/upload-image",
         reader
       );
       setUploading(false);
@@ -52,7 +52,7 @@ export default function AddFood() {
     setUploading(true);
     try {
       await axios.post(
-        "https://restaurant-backend-seven.vercel.app/api/v1/food/admin/addfood",
+        "https://restaurant-backend-drab.vercel.app/api/v1/food/admin/addfood",
         {
           name: formData.name,
           price: formData.price,
