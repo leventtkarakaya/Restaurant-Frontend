@@ -4,6 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import { UseFoodContext } from "../../context/foodContext";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { UseCardContext } from "../../context/cardContext";
 export default function NewFood() {
   const [newFood, setNewFood] = useState([]);
   const { food, setFood } = UseFoodContext();
