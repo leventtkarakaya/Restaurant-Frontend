@@ -25,7 +25,7 @@ export default function Order() {
         quantity: item.quantity,
       }));
       const res = await axios.post(
-        "https://restaurant-backend-seven.vercel.app/api/v1/order/order",
+        "https://restaurant-backend-drab.vercel.app/api/v1/order/order",
         {
           user: user?._id,
           items: orderItems,
