@@ -49,7 +49,7 @@ export default function RecommendationFood() {
                       key={item._id}
                     >
                       <div className="relative mb-3">
-                        <Link to={`/food-details/${foodItem?._id}`}>
+                        <Link to={`/food-details/${item?._id}`}>
                         <img
                           src={item?.foodImage}
                           alt="food"
