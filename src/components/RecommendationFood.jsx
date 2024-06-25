@@ -20,7 +20,7 @@ export default function RecommendationFood() {
       setUploading(false);
       if (res.data.success && uploading === false) {
         setRatingFood(res.data.data.food);
-        toast.success(res.data.message);
+
       } else {
         toast.error(res.data.message);
       }
