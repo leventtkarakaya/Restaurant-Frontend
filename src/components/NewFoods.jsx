@@ -29,6 +29,7 @@ export default function NewFood() {
     getNewFood();
   }, [setNewFood]);
   console.log(newFood);
+  const { addToCart } = UseCardContext();
   return (
     <>
       <div className="px-10 py-3 sm:px-4 md:px-6 lg:px-6">
@@ -73,7 +74,9 @@ export default function NewFood() {
                           {item?.name}
                         </p>
                       </div>
-                      <button className="bg-[#005b96] hover:bg-[#03396c] active:scale-90 transition-all duration-200 shadow-md hover:shadow-xl text-white font-medium py-2 px-8 rounded-full mt-3">
+                      <button 
+                        onClick={() => addToCart(item)}
+                        className="bg-[#005b96] hover:bg-[#03396c] active:scale-90 transition-all duration-200 shadow-md hover:shadow-xl text-white font-medium py-2 px-8 rounded-full mt-3">
                         Siparişe Ver
                       </button>
                     </div>
