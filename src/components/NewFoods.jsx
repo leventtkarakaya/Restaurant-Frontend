@@ -32,10 +32,8 @@ export default function NewFood() {
   console.log(newFood);
   const { addToCart } = UseCardContext();
   return (
-  <>
+ <>
       {uploading === false ? (
-        <div className="flex justify-center items-center font-bold text-3xl">Yükleniyor...</div>
-      ) : (
         <div className="px-10 py-3 sm:px-4 md:px-6 lg:px-6">
           <div className="container mx-auto py-[2vh]">
             <div className="text-2xl md:text-3xl font-bold text-center text-[#2e2e2e] lg:text-4xl">
@@ -87,6 +85,10 @@ export default function NewFood() {
                 })}
             </div>
           </div>
+        </div>
+      ) : (
+        <div className="flex justify-center items-center font-bold text-3xl">
+          Yükleniyor...
         </div>
       )}
     </>
