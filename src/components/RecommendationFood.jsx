@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { UseCardContext } from "../../context/cardContext";
+import loading from "../../public/loading.gif";
 export default function RecommendationFood() {
   const [ratingFood, setRatingFood] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -41,7 +42,7 @@ export default function RecommendationFood() {
             Tavsiye Edilen <span className="text-[#03396c]">Yemekler</span>
           </div>
           <div className="grid grid-cols-1 gap-8 py-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {ratingFood &&
+             {uploading === false ? (
               ratingFood.map((item) => {
                 return (
                   <>
@@ -50,7 +51,6 @@ export default function RecommendationFood() {
                       key={item._id}
                     >
                       <div className="relative mb-3">
-                        <Link to={`/food-details/${item?._id}`}>
                         <img
                           src={item?.foodImage}
                           alt="food"
@@ -62,7 +62,6 @@ export default function RecommendationFood() {
                             height: "200px",
                           }}
                         />
-                           </Link>
                         <div className="absolute top-0 left-2">
                           <button
                             key={item._id}
@@ -93,7 +92,12 @@ export default function RecommendationFood() {
                     </div>
                   </>
                 );
-              })}
+              })
+            ) : (
+              <div className="flex justify-center items-center font-bold text-3xl">
+                <img src={loading} alt="loading" />
+              </div>
+            )}
           </div>
         </div>
       </div>
