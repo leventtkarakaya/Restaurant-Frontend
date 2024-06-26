@@ -34,7 +34,7 @@ export default function NewFood() {
   return (
   <>
       {uploading ? (
-        <div className="text-center">Yükleniyor...</div>
+        <div className="flex justify-center items-center font-bold text-3xl">Yükleniyor...</div>
       ) : (
         <div className="px-10 py-3 sm:px-4 md:px-6 lg:px-6">
           <div className="container mx-auto py-[2vh]">
