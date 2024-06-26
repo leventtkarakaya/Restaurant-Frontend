@@ -5,6 +5,7 @@ import { FaHeart, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { UseCardContext } from "../../context/cardContext";
+import loading from "../../public/loading.gif";
 export default function Special() {
   const [special, setSpecial] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -38,7 +39,7 @@ export default function Special() {
             Has <span className="text-[#03396c]">Yemekler</span>
           </div>
           <div className="grid grid-cols-1 gap-4 mt-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {special &&
+           {uploading === false ? (
               special.map((item, index) => {
                 const foodItem = item[0];
                 console.log("🚀 ~ Special ~ foodItem:", foodItem);
@@ -48,7 +49,7 @@ export default function Special() {
                     className="flex flex-col items-center p-5 rounded-lg cursor-pointer bg-slate-300 food-card"
                   >
                     <div className="relative mb-3">
-                      <Link to={`/food-details/${foodItem?._id}`}>
+                      <Link to={`/food/${foodItem?._id}`}>
                         <img
                           src={foodItem?.foodImage}
                           alt="food"
@@ -90,14 +91,17 @@ export default function Special() {
                         </span>
                       </div>
                     </div>
-                    <button 
-                      onClick={() => addToCart(item)}
-                      className="bg-[#005b96] hover:bg-[#03396c] active:scale-90 transition-all duration-200 shadow-md hover:shadow-xl text-white font-medium py-2 px-8 rounded-full mt-3">
+                    <button className="bg-[#005b96] hover:bg-[#03396c] active:scale-90 transition-all duration-200 shadow-md hover:shadow-xl text-white font-medium py-2 px-8 rounded-full mt-3">
                       Siparişe Ver
                     </button>
                   </div>
                 );
-              })}
+              })
+            ) : (
+              <div className="flex items-center justify-center text-3xl font-bold">
+                <img src={loading} alt="loading" />
+              </div>
+            )}
           </div>
         </div>
       </div>
