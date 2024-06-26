@@ -5,6 +5,7 @@ import { UseFoodContext } from "../../context/foodContext";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { UseCardContext } from "../../context/cardContext";
+import loading from "../../public/loading.gif";
 export default function NewFood() {
   const [newFood, setNewFood] = useState([]);
   const { food, setFood } = UseFoodContext();
@@ -88,7 +89,7 @@ export default function NewFood() {
         </div>
       ) : (
         <div className="flex justify-center items-center font-bold text-3xl">
-          Yükleniyor...
+          <img src={loading} alt="loading" />
         </div>
       )}
     </>
