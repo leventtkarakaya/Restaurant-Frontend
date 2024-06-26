@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { UseCardContext } from "../../context/cardContext";
 import loading from "../../public/loading.gif";
+import { Link } from "react-router-dom";
 export default function RecommendationFood() {
   const [ratingFood, setRatingFood] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -51,6 +52,7 @@ export default function RecommendationFood() {
                       key={item._id}
                     >
                       <div className="relative mb-3">
+                        <Link to={`/food-details/${item?._id}`}>
                         <img
                           src={item?.foodImage}
                           alt="food"
@@ -62,6 +64,7 @@ export default function RecommendationFood() {
                             height: "200px",
                           }}
                         />
+                          </Link>
                         <div className="absolute top-0 left-2">
                           <button
                             key={item._id}
