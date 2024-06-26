@@ -49,7 +49,7 @@ export default function Special() {
                     className="flex flex-col items-center p-5 rounded-lg cursor-pointer bg-slate-300 food-card"
                   >
                     <div className="relative mb-3">
-                     <Link to={`/food-details/${item?._id}`}>
+                     <Link to={`/food-details/${item._id}`}>
                         <img
                           src={foodItem?.foodImage}
                           alt="food"
